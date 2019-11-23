@@ -79,7 +79,8 @@ function main() {
                     ["BitprimConanFile", "KnuthConanFile"], 
                     ["@bitprim/", "@kth/"], 
                     ["Note(bitprim):", "Note(knuth):"], 
-                    ["<bitprim/", "<knuth/"]
+                    ["<bitprim/", "<knuth/"], 
+                    ["BC_CONSTEXPR", "constexpr"]
     ];        
     
     const checks = ['bitprim'];
@@ -95,7 +96,7 @@ function main() {
             for (let i = 0; i < files.length; i++) {
                 const filename = files[i];
                 
-                if ( ! is_an_ignored_file(filename, ignore)) {      //TODO
+                if ( ! is_an_ignored_file(filename, ignore)){ 
                     fs.readFile(filename, function(e,d) {
                         if (!e) {
                             //var reemplazo_unico = [[w[1], w[1]]];
@@ -105,21 +106,17 @@ function main() {
                             });
 
                             if (is_something_wrong(replaced_str, checks)){
-                                console.log(filename + " IS WRONG"); 
+                                console.log(filename); 
                             }
 
-                        } else {
+                            } else {
                             console.log(e);
-                        }
+                            }
                     });
                 }
-            } 
-            
-            //TODO: hacer un commit 
-            //      un commit por reemplazo (consultar con fer si puedo hacerlo dentro del for)
+            }  
         }
-
-    });
+    });    
 }
 
 main(); 
