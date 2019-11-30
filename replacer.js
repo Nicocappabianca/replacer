@@ -80,7 +80,13 @@ function main() {
                     ["@bitprim/", "@kth/"], 
                     ["Note(bitprim):", "Note(knuth):"], 
                     ["<bitprim/", "<knuth/"], 
-                    ["BC_CONSTEXPR", "constexpr"]
+                    ["BC_CONSTEXPR", "constexpr"],
+                    ["bitprim_temp", "kth_temp "],
+                    ["bitprim-", "kth-"],
+                    ["Bitprim branch:", "Knuth branch:"], 
+                    ["*Bitprim*", "*Knuth*"], 
+                    ["bitprim::","knuth::"], 
+                    
     ];        
     
     const checks = ['bitprim'];
